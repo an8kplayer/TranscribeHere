@@ -299,3 +299,27 @@ if (localStorage.getItem("darkMode") === "on") {
         }
 
     
+// OPEN KC PAGE
+function openKCPage()
+{
+    window.location.href = "kc-matters.html";
+}
+
+
+// RECEIVE SELECTED MATTER
+window.addEventListener("load", function ()
+{
+    const selectedMatter = localStorage.getItem("selectedMatter");
+
+    if (selectedMatter)
+    {
+        const input = document.getElementById("passageInput");
+
+        if (input)
+        {
+            input.value = selectedMatter;
+        }
+
+        localStorage.removeItem("selectedMatter");
+    }
+});
