@@ -306,9 +306,11 @@ function openKCPage()
 }
 
 
-// RECEIVE SELECTED MATTER
 window.addEventListener("load", function ()
 {
+    // Only run on index.html
+    if (!location.pathname.includes("index.html")) return;
+
     const selectedMatter = localStorage.getItem("selectedMatter");
 
     if (selectedMatter)
