@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>KC Matters</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>KC Matters</h2>
+
+<button onclick="goHome()">🏠 Home</button>
+
+<div id="list"></div>
+
+</div>
+
+<script>
+
+const matters =
+[
+{
+name: "Transcription No: 1",
+text: "This is transcription number one."
+},
+
+{
+name: "Transcription No: 2",
+text: "This is transcription number two."
+},
+
+{
+name: "Transcription No: 33",
+text: "This is transcription number thirty three."
+}
+];
+
+const list = document.getElementById("list");
+
+matters.forEach(m =>
+{
+const btn = document.createElement("button");
+
+btn.innerText = m.name;
+
+btn.style.display = "block";
+btn.style.margin = "10px";
+btn.style.width = "100%";
+
+btn.onclick = function()
+{
+localStorage.setItem("selectedMatter", m.text);
+
+window.location.href = "index.html";
+};
+
+list.appendChild(btn);
+});
+
+
+function goHome()
+{
+window.location.href = "index.html";
+}
+
+</script>
+
+</body>
+</html>
